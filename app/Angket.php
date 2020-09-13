@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-user DB;
+use DB;
 
 class Angket extends Model
 {

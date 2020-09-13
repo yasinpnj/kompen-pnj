@@ -22,6 +22,5 @@ Route::get('/home', 'homeController@index');
 
 // Route::get('/demografi/index','DemografiController@index');
 Route::post('/demo/data','DemografiController@index');
-
-// Route::post('/home/data','homeController@index');
+Route::post('/home/data','homeController@data');
 

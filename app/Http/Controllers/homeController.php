@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class homeController extends Controller
 {
     public function index(){
         
-        return view ('home');
+        return view('home');
     }
 
-    public function data (Request $request){
+    public function data(Request $request){
         // insert data ke table dosen
          DB::table('angket')->insert([
+         // belum ada auth, ini gua kasih default angka 1, sisanya lanjutin aja
+         'id_user' => 1,
          'jawaban1' => $request->radios1,
          'jawaban2' => $request->radios2,
          'jawaban3' => $request->radios3,
@@ -52,8 +55,6 @@ class homeController extends Controller
          'jawaban36' => $request->radios36,
          'jawaban37' => $request->radios37,
          'jawaban38' => $request->radios38,
-
-         
      ]);
      // alihkan halaman ke halaman pegawai
          return redirect('/home');
